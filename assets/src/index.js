@@ -1,29 +1,37 @@
 window.onload = function() {
-    
 
+    function calculateIMC(weight, height) {
+        return weight / ( height * height );
+    }
+
+    function translateIMC(imc){
+        if (imc < 18.5) {
+            return "Magreza";
+        } 
+
+        if (imc < 24.9) {
+            return "Normal";
+        }
+
+        if (imc < 30) {
+            return "Subrepeso";
+        }  
+        
+        return "Obesidade";
+    }
+    
     var form = document.getElementById("imc-form") ;
 
     form.addEventListener("submit", function (event) {
         event.preventDefault();
         var weight = parseFloat(form["weight-input"].value);
         var height = parseFloat(form["height-input"].value);
-        
-        var result;
-
-        if (isNaN(weight) || isNaN(height)) {
-            result = "Informe valores númericos nos campos acima.";
+        var result = "";
+        if (parseFloat(weight) && parseFloat(height)) {
+            var imc = calculateIMC(weight, height);
+            result = translateIMC(imc);
         } else {
-            var imc = weight / ( height * height );
-
-            if(imc < 18.5) {
-                result = "Magreza";
-            } else if (imc >= 18.5 && imc <= 24.9) {
-                result = "Normal";
-            } else if (imc > 24.9 && imc <= 30) {
-                result = "Subrepeso";
-            } else {
-                result = "Obesidade";
-            }
+            result = "Informe valores numéricos no campo acima.";
         }
 
         var resultSpan = document.getElementById("result-span");
