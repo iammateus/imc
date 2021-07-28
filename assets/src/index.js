@@ -5,17 +5,11 @@ window.onload = function() {
     }
 
     function translateIMC(imc){
-        if (imc < 18.5) {
-            return "Magreza";
-        } 
+        if (imc < 18.5) return "Magreza";
 
-        if (imc < 24.9) {
-            return "Normal";
-        }
+        if (imc < 24.9) return "Normal";
 
-        if (imc < 30) {
-            return "Subrepeso";
-        }  
+        if (imc < 30) return "Subrepeso";
         
         return "Obesidade";
     }
