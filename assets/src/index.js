@@ -20,16 +20,9 @@ window.onload = function() {
         event.preventDefault();
         var weight = parseFloat(form["weight-input"].value);
         var height = parseFloat(form["height-input"].value);
-        var result = "";
-        if (weight && height) {
-            var imc = calculateIMC(weight, height);
-            result = translateIMC(imc);
-        } else {
-            result = "Informe valores numéricos nos campos acima.";
-        }
+        var result = weight && height ? translateIMC(calculateIMC(weight, height)) : "Informe valores numéricos nos campos acima.";
 
-        var resultSpan = document.getElementById("result-span");
-        resultSpan.innerText = result;
+        document.getElementById("result-span").innerText = result;
     });
 
 };
