@@ -21,7 +21,7 @@ window.onload = function() {
         var weight = parseFloat(form["weight-input"].value);
         var height = parseFloat(form["height-input"].value);
         var result = "";
-        if (parseFloat(weight) && parseFloat(height)) {
+        if (weight && height) {
             var imc = calculateIMC(weight, height);
             result = translateIMC(imc);
         } else {
