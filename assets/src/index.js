@@ -31,7 +31,7 @@ window.onload = function() {
             var imc = calculateIMC(weight, height);
             result = translateIMC(imc);
         } else {
-            result = "Informe valores numéricos no campo acima.";
+            result = "Informe valores numéricos nos campos acima.";
         }
 
         var resultSpan = document.getElementById("result-span");

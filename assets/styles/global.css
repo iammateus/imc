@@ -47,3 +47,9 @@ button {
     padding: 11px;
     cursor: pointer;
 }
+
+#result-span{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
